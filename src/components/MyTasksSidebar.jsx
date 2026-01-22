@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   CheckSquareIcon,
   ChevronDownIcon,
@@ -9,13 +9,10 @@ import { Link } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 
 function MyTasksSidebar() {
-  // const user = { id: 'user_1' }
-
   const { user } = useUser();
 
   const { currentWorkspace } = useSelector((state) => state.workspace);
   const [showMyTasks, setShowMyTasks] = useState(false);
-  // const [myTasks, setMyTasks] = useState([]);
 
   const myTasks = useMemo(() => {
     const userId = user?.id || "";
@@ -42,20 +39,6 @@ function MyTasksSidebar() {
         return "bg-gray-400 dark:bg-zinc-400";
     }
   };
-
-  // const fetchUserTasks = () => {
-  //     const userId = user?.id || '';
-  //     if (!userId || !currentWorkspace) return;
-  //     const currentWorkspaceTasks = currentWorkspace.projects.flatMap((project) => {
-  //         return project.tasks.filter((task) => task?.assignee?.id === userId);
-  //     });
-
-  //     setMyTasks(currentWorkspaceTasks);
-  // }
-
-  // useEffect(() => {
-  //     fetchUserTasks()
-  // }, [currentWorkspace])
 
   return (
     <div className="mt-6 px-3">

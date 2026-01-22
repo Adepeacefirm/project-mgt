@@ -45,22 +45,6 @@ const workspaceSlice = createSlice({
       state.workspaces = action.payload;
     },
 
-    // setCurrentWorkspace: (state, action) => {
-    //   const id = action.payload;
-    //   if (!id) return;
-
-    //   localStorage.setItem("currentWorkspaceId", id);
-
-    //   const found = state.workspaces.find((w) => w.id === id);
-
-    //   // Only set when API data is present
-    //   if (found) {
-    //     state.currentWorkspace = found;
-    //   } else {
-    //     // IMPORTANT: clear stale Clerk object
-    //     state.currentWorkspace = null;
-    //   }
-    // },
 
     setCurrentWorkspace: (state, action) => {
       const payload = action.payload;
@@ -77,27 +61,9 @@ const workspaceSlice = createSlice({
         if (found) {
           state.currentWorkspace = found;
         }
-        // || (typeof payload === "object" ? payload : null);
       }
     },
 
-    //     setMembers: (state, action) => {
-    //   // 1. Update the list inside the current workspace
-    //   if (state.currentWorkspace) {
-    //     state.currentWorkspace.members = action.payload;
-    //   }
-    //   // 2. Also update the workspace in the main array so data stays consistent
-    //   state.workspaces = state.workspaces.map((w) =>
-    //     w.id === state.currentWorkspace?.id ? { ...w, members: action.payload } : w
-    //   );
-    // },
-
-    // setCurrentWorkspace: (state, action) => {
-    //   localStorage.setItem("currentWorkspaceId", action.payload);
-    //   state.currentWorkspace = state.workspaces.find(
-    //     (w) => w.id === action.payload
-    //   );
-    // },
     addWorkspace: (state, action) => {
       state.workspaces.push(action.payload);
 
@@ -263,19 +229,6 @@ const workspaceSlice = createSlice({
 
       state.loading = false;
       state.fetched = true;
-      //   state.workspaces = action.payload;
-      //   if (action.payload.length > 0) {
-      //     const localStorageCurrentWorkspaceId =
-      //       localStorage.getItem("currentWorkspaceId");
-      //     if (localStorageCurrentWorkspaceId) {
-      //       const findWorkspace = action.payload.find(
-      //         (w) => w.id === localStorageCurrentWorkspaceId
-      //       );
-      //       state.currentWorkspace = findWorkspace || action.payload[0];
-      //     }
-      //     state.loading = false;
-      //     state.fetched = true;
-      //   }
     });
 
     builder.addCase(fetchWorkspaces.rejected, (state) => {

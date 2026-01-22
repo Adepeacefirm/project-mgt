@@ -6,7 +6,6 @@ import {
   syncWorkspaces,
 } from "../features/workspaceSlice";
 import { useNavigate } from "react-router-dom";
-import { dummyWorkspaces } from "../assets/assets";
 import { useClerk, useOrganizationList } from "@clerk/clerk-react";
 
 function WorkspaceDropdown() {
@@ -25,13 +24,6 @@ function WorkspaceDropdown() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
-
-  //   useEffect(() => {
-  //     if (isLoaded && currentWorkspace?.id) {
-  //       setActive({ organization: currentWorkspace.id });
-  //     }
-  //   }, [currentWorkspace?.id, isLoaded, setActive]);
 
   useEffect(() => {
   if (!isLoaded || !userMemberships.data) return;
@@ -67,13 +59,6 @@ function WorkspaceDropdown() {
     setIsOpen(false);
     navigate("/");
   };
-
-  //   const onSelectWorkspace = async (org) => {
-  //     await setActive({ organization: org.id });
-  //     dispatch(setCurrentWorkspace(org.id));
-  //     setIsOpen(false);
-  //     navigate("/");
-  //   };
 
   // Close dropdown on outside click
   useEffect(() => {

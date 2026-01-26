@@ -129,7 +129,7 @@ const ProjectTasks = ({ tasks }) => {
   return (
     <div>
       {/* Filters */}
-      <div className="flex flex-wrap gap-4 mb-4">
+      <section className="flex flex-wrap gap-4 mb-4">
         {["status", "type", "priority", "assignee"].map((name) => {
           const options = {
             status: [
@@ -198,10 +198,10 @@ const ProjectTasks = ({ tasks }) => {
             <Trash className="size-3" /> Delete
           </button>
         )}
-      </div>
+      </section>
 
       {/* Tasks Table */}
-      <div className="overflow-auto rounded-lg lg:border border-zinc-300 dark:border-zinc-800">
+      <section className="overflow-auto rounded-lg lg:border border-zinc-300 dark:border-zinc-800">
         <div className="w-full">
           {/* Desktop/Table View */}
           <div className="hidden lg:block overflow-x-auto">
@@ -337,7 +337,7 @@ const ProjectTasks = ({ tasks }) => {
                   priorityTexts[task.priority] || {};
 
                 return (
-                  <div
+                  <section
                     key={task.id}
                     className=" dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/50 border border-zinc-300 dark:border-zinc-800 rounded-lg p-4 flex flex-col gap-2"
                   >
@@ -403,7 +403,7 @@ const ProjectTasks = ({ tasks }) => {
                       <CalendarIcon className="size-4" />
                       {format(new Date(task.due_date), "dd MMMM")}
                     </div>
-                  </div>
+                  </section>
                 );
               })
             ) : (
@@ -413,7 +413,7 @@ const ProjectTasks = ({ tasks }) => {
             )}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

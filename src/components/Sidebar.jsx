@@ -32,7 +32,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         <div ref={sidebarRef} className={`z-10 bg-white dark:bg-zinc-900 min-w-68 flex flex-col h-screen border-r border-gray-200 dark:border-zinc-800 max-sm:absolute transition-all ${isSidebarOpen ? 'left-0' : '-left-full'} `} >
             <WorkspaceDropdown />
             <hr className='border-gray-200 dark:border-zinc-800' />
-            <div className='flex-1 overflow-y-scroll no-scrollbar flex flex-col'>
+            <section className='flex-1 overflow-y-scroll no-scrollbar flex flex-col'>
                 <div>
                     <div className='p-4'>
                         {menuItems.map((item) => (
@@ -51,7 +51,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 </div>
 
 
-            </div>
+            </section>
 
         </div>
     )

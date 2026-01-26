@@ -41,7 +41,7 @@ function MyTasksSidebar() {
   };
 
   return (
-    <div className="mt-6 px-3">
+    <section className="mt-6 px-3">
       <div
         onClick={toggleMyTasks}
         className="flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-800"
@@ -63,7 +63,7 @@ function MyTasksSidebar() {
       </div>
 
       {showMyTasks && (
-        <div className="mt-2 pl-2">
+        <section className="mt-2 pl-2">
           <div className="space-y-1">
             {myTasks.length === 0 ? (
               <div className="px-3 py-2 text-xs text-gray-500 dark:text-zinc-500 text-center">
@@ -93,9 +93,9 @@ function MyTasksSidebar() {
               ))
             )}
           </div>
-        </div>
+        </section>
       )}
-    </div>
+    </section>
   );
 }
 

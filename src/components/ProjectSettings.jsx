@@ -61,13 +61,13 @@ export default function ProjectSettings({ project }) {
   return (
     <div className="grid lg:grid-cols-2 gap-8">
       {/* Project Details */}
-      <div className={cardClasses}>
+      <section className={cardClasses}>
         <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-300 mb-4">
           Project Details
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name */}
-          <div className="space-y-2">
+          <section className="space-y-2">
             <label className={labelClasses}>Project Name</label>
             <input
               value={formData.name}
@@ -77,10 +77,10 @@ export default function ProjectSettings({ project }) {
               className={inputClasses}
               required
             />
-          </div>
+          </section>
 
           {/* Description */}
-          <div className="space-y-2">
+          <section className="space-y-2">
             <label className={labelClasses}>Description</label>
             <textarea
               value={formData.description}
@@ -89,10 +89,10 @@ export default function ProjectSettings({ project }) {
               }
               className={inputClasses + " h-24"}
             />
-          </div>
+          </section>
 
           {/* Status & Priority */}
-          <div className="grid grid-cols-2 gap-4">
+          <section className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className={labelClasses}>Status</label>
               <select
@@ -124,10 +124,10 @@ export default function ProjectSettings({ project }) {
                 <option value="HIGH">High</option>
               </select>
             </div>
-          </div>
+          </section>
 
           {/* Timeline */}
-          <div className="space-y-4 grid grid-cols-2 gap-4">
+          <section className="space-y-4 grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className={labelClasses}>Start Date</label>
               <input
@@ -156,10 +156,10 @@ export default function ProjectSettings({ project }) {
                 className={inputClasses}
               />
             </div>
-          </div>
+          </section>
 
           {/* Progress */}
-          <div className="space-y-2">
+          <section className="space-y-2">
             <label className={labelClasses}>
               Progress: {formData.progress}%
             </label>
@@ -174,7 +174,7 @@ export default function ProjectSettings({ project }) {
               }
               className="w-full accent-blue-500 dark:accent-blue-400"
             />
-          </div>
+          </section>
 
           {/* Save Button */}
           <button
@@ -186,10 +186,10 @@ export default function ProjectSettings({ project }) {
             {isSubmitting ? "Saving..." : "Save Changes"}
           </button>
         </form>
-      </div>
+      </section>
 
       {/* Team Members */}
-      <div className="space-y-6">
+      <section className="space-y-6">
         <div className={cardClasses}>
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-300 mb-4">
@@ -230,7 +230,7 @@ export default function ProjectSettings({ project }) {
             </div>
           )}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

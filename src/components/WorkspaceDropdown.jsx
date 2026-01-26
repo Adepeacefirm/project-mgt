@@ -102,7 +102,7 @@ function WorkspaceDropdown() {
 
       {isOpen && (
         <div className="absolute z-50 w-64 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded shadow-lg top-full left-0">
-          <div className="p-2">
+          <section className="p-2">
             <p className="text-xs text-gray-500 dark:text-zinc-400 uppercase tracking-wider mb-2 px-2">
               Workspaces
             </p>
@@ -130,7 +130,7 @@ function WorkspaceDropdown() {
                 )}
               </div>
             ))}
-          </div>
+          </section>
 
           <hr className="border-gray-200 dark:border-zinc-700" />
 

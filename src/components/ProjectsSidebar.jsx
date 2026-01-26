@@ -52,7 +52,7 @@ const ProjectSidebar = () => {
 
   return (
     <div className="mt-6 px-3">
-      <div className="flex items-center justify-between px-3 py-2">
+      <section className="flex items-center justify-between px-3 py-2">
         <h3 className="text-xs font-medium text-gray-500 dark:text-zinc-400 uppercase tracking-wider">
           Projects
         </h3>
@@ -61,9 +61,9 @@ const ProjectSidebar = () => {
             <ArrowRightIcon className="size-3" />
           </button>
         </Link>
-      </div>
+      </section>
 
-      <div className="space-y-1 px-3">
+      <section className="space-y-1 px-3">
         {projects.map((project) => (
           <div key={project.id}>
             <button
@@ -101,7 +101,7 @@ const ProjectSidebar = () => {
             )}
           </div>
         ))}
-      </div>
+      </section>
     </div>
   );
 };

@@ -82,7 +82,7 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
   if (!isDialogOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/20 dark:bg-black/60 backdrop-blur flex items-center justify-center text-left z-50 p-4">
+    <section className="fixed inset-0 bg-black/20 dark:bg-black/60 backdrop-blur flex items-center justify-center text-left z-50 p-4">
       <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 w-full max-w-lg text-zinc-900 dark:text-zinc-200 relative max-h-[90vh] flex flex-col overflow-y-auto">
         <button
           className="absolute top-3 right-3 text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"
@@ -103,7 +103,7 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Project Name */}
-          <div>
+          <section>
             <label className="block text-sm mb-1">Project Name</label>
             <input
               type="text"
@@ -115,10 +115,10 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
               className="w-full px-3 py-2 rounded dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 mt-1 text-zinc-900 dark:text-zinc-200 text-sm"
               required
             />
-          </div>
+          </section>
 
           {/* Description */}
-          <div>
+          <section>
             <label className="block text-sm mb-1">Description</label>
             <textarea
               value={formData.description}
@@ -128,10 +128,10 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
               placeholder="Describe your project"
               className="w-full px-3 py-2 rounded dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 mt-1 text-zinc-900 dark:text-zinc-200 text-sm h-20"
             />
-          </div>
+          </section>
 
           {/* Status & Priority */}
-          <div className="grid grid-cols-2 gap-4">
+          <section className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm mb-1">Status</label>
               <select
@@ -163,10 +163,10 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
                 <option value="HIGH">High</option>
               </select>
             </div>
-          </div>
+          </section>
 
           {/* Dates */}
-          <div className="grid grid-cols-2 gap-4">
+          <section className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm mb-1">Start Date</label>
               <input
@@ -193,10 +193,10 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
                 className="w-full px-3 py-2 rounded dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 mt-1 text-zinc-900 dark:text-zinc-200 text-sm"
               />
             </div>
-          </div>
+          </section>
 
           {/* Lead */}
-          <div>
+          <section>
             <label className="block text-sm mb-1">Project Lead</label>
             <select
               value={formData.team_lead}
@@ -218,10 +218,10 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
                 </option>
               ))}
             </select>
-          </div>
+          </section>
 
           {/* Team Members */}
-          <div>
+          <section>
             <label className="block text-sm mb-1">Team Members</label>
             <select
               className="w-full px-3 py-2 rounded dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 mt-1 text-zinc-900 dark:text-zinc-200 text-sm"
@@ -269,10 +269,10 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
                 ))}
               </div>
             )}
-          </div>
+          </section>
 
           {/* Footer */}
-          <div className="flex justify-end gap-3 pt-2 text-sm">
+          <section className="flex justify-end gap-3 pt-2 text-sm">
             <button
               type="button"
               onClick={() => setIsDialogOpen(false)}
@@ -286,10 +286,10 @@ const CreateProjectDialog = ({ isDialogOpen, setIsDialogOpen }) => {
             >
               {isSubmitting ? "Creating..." : "Create Project"}
             </button>
-          </div>
+          </section>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

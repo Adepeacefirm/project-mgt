@@ -13,7 +13,7 @@ const Dashboard = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false)
 
     return (
-        <div className='max-w-6xl mx-auto'>
+        <main className='max-w-6xl mx-auto'>
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 ">
                 <div>
                     <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-1"> Welcome back, {user?.fullName || 'User'} </h1>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                     <TasksSummary />
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

@@ -37,7 +37,7 @@ const InviteMemberDialog = ({ isDialogOpen, setIsDialogOpen }) => {
   if (!isDialogOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/20 dark:bg-black/50 backdrop-blur flex items-center justify-center z-50">
+    <section className="fixed inset-0 bg-black/20 dark:bg-black/50 backdrop-blur flex items-center justify-center z-50">
       <div className="bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-xl p-6 w-full max-w-md text-zinc-900 dark:text-zinc-200">
         {/* Header */}
         <div className="mb-4">
@@ -58,7 +58,7 @@ const InviteMemberDialog = ({ isDialogOpen, setIsDialogOpen }) => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email */}
-          <div className="space-y-2">
+          <section className="space-y-2">
             <label
               htmlFor="email"
               className="text-sm font-medium text-zinc-900 dark:text-zinc-200"
@@ -78,10 +78,10 @@ const InviteMemberDialog = ({ isDialogOpen, setIsDialogOpen }) => {
                 required
               />
             </div>
-          </div>
+          </section>
 
           {/* Role */}
-          <div className="space-y-2">
+          <section className="space-y-2">
             <label className="text-sm font-medium text-zinc-900 dark:text-zinc-200">
               Role
             </label>
@@ -95,10 +95,10 @@ const InviteMemberDialog = ({ isDialogOpen, setIsDialogOpen }) => {
               <option value="org:member">Member</option>
               <option value="org:admin">Admin</option>
             </select>
-          </div>
+          </section>
 
           {/* Footer */}
-          <div className="flex justify-end gap-3 pt-2">
+          <section className="flex justify-end gap-3 pt-2">
             <button
               type="button"
               onClick={() => setIsDialogOpen(false)}
@@ -113,10 +113,10 @@ const InviteMemberDialog = ({ isDialogOpen, setIsDialogOpen }) => {
             >
               {isSubmitting ? "Sending..." : "Send Invitation"}
             </button>
-          </div>
+          </section>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

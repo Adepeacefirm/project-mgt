@@ -24,35 +24,6 @@ const TaskDetails = () => {
 
   const { currentWorkspace } = useSelector((state) => state.workspace);
 
-  const fetchComments = async () => {
-    if (!taskId) return;
-    try {
-      const token = await getToken();
-      const { data } = await api.get(`/api/comments/${taskId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setComments(data.comments || []);
-    } catch (error) {
-      console.log(error);
-      toast.error(error?.response?.data?.message || error.message);
-    }
-  };
-
-  const fetchTaskDetails = async () => {
-    setLoading(true);
-    if (!projectId || !taskId) return;
-
-    const proj = currentWorkspace?.projects?.find((p) => p.id === projectId);
-    if (!proj) return;
-
-    const tsk = proj?.tasks?.find((t) => t.id === taskId);
-    if (!tsk) return;
-
-    setTask(tsk);
-    setProject(proj);
-    setLoading(false);
-  };
-
   const handleAddComment = async () => {
     if (!newComment.trim()) return;
 
@@ -78,18 +49,45 @@ const TaskDetails = () => {
   };
 
   useEffect(() => {
+    const fetchTaskDetails = async () => {
+      setLoading(true);
+      if (!projectId || !taskId) return;
+
+      const proj = currentWorkspace?.projects?.find((p) => p.id === projectId);
+      if (!proj) return;
+
+      const tsk = proj?.tasks?.find((t) => t.id === taskId);
+      if (!tsk) return;
+
+      setTask(tsk);
+      setProject(proj);
+      setLoading(false);
+    };
     fetchTaskDetails();
-  }, [taskId, fetchTaskDetails]);
+  }, [taskId, currentWorkspace?.projects, projectId]);
 
   useEffect(() => {
     if (taskId && task) {
+      const fetchComments = async () => {
+        if (!taskId) return;
+        try {
+          const token = await getToken();
+          const { data } = await api.get(`/api/comments/${taskId}`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          setComments(data.comments || []);
+        } catch (error) {
+          console.log(error);
+          toast.error(error?.response?.data?.message || error.message);
+        }
+      };
       fetchComments();
       const interval = setInterval(() => {
         fetchComments();
       }, 10000);
       return () => clearInterval(interval);
     }
-  }, [taskId, task, fetchComments]);
+  }, [taskId, task, getToken]);
 
   if (loading)
     return (

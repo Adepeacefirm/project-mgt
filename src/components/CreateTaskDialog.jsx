@@ -62,13 +62,13 @@ export default function CreateTaskDialog({
   };
 
   return showCreateTask ? (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 dark:bg-black/60 backdrop-blur">
+    <section className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 dark:bg-black/60 backdrop-blur">
       <div className="bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-lg shadow-lg w-full max-w-md p-6 text-zinc-900 dark:text-white max-h-[90vh] flex flex-col overflow-y-auto">
         <h2 className="text-xl font-bold mb-4">Create New Task</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Title */}
-          <div className="space-y-1">
+          <section className="space-y-1">
             <label htmlFor="title" className="text-sm font-medium">
               Title
             </label>
@@ -81,10 +81,10 @@ export default function CreateTaskDialog({
               className="w-full rounded dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 px-3 py-2 text-zinc-900 dark:text-zinc-200 text-sm mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
-          </div>
+          </section>
 
           {/* Description */}
-          <div className="space-y-1">
+          <section className="space-y-1">
             <label htmlFor="description" className="text-sm font-medium">
               Description
             </label>
@@ -96,10 +96,10 @@ export default function CreateTaskDialog({
               placeholder="Describe the task"
               className="w-full rounded dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 px-3 py-2 text-zinc-900 dark:text-zinc-200 text-sm mt-1 h-24 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-          </div>
+          </section>
 
           {/* Type & Priority */}
-          <div className="grid grid-cols-2 gap-4">
+          <section className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="text-sm font-medium">Type</label>
               <select
@@ -131,10 +131,10 @@ export default function CreateTaskDialog({
                 <option value="HIGH">High</option>
               </select>
             </div>
-          </div>
+          </section>
 
           {/* Assignee and Status */}
-          <div className="grid grid-cols-2 gap-4">
+          <section className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="text-sm font-medium">Assignee</label>
               <select
@@ -167,10 +167,10 @@ export default function CreateTaskDialog({
                 <option value="DONE">Done</option>
               </select>
             </div>
-          </div>
+          </section>
 
           {/* Due Date */}
-          <div className="space-y-1">
+          <section className="space-y-1">
             <label className="text-sm font-medium">Due Date</label>
             <div className="flex items-center gap-2">
               <CalendarIcon className="size-5 text-zinc-500 dark:text-zinc-400" />
@@ -189,10 +189,10 @@ export default function CreateTaskDialog({
                 {format(new Date(formData.due_date), "PPP")}
               </p>
             )}
-          </div>
+          </section>
 
           {/* Footer */}
-          <div className="flex justify-end gap-2 pt-2">
+          <section className="flex justify-end gap-2 pt-2">
             <button
               type="button"
               onClick={() => setShowCreateTask(false)}
@@ -207,9 +207,9 @@ export default function CreateTaskDialog({
             >
               {isSubmitting ? "Creating..." : "Create Task"}
             </button>
-          </div>
+          </section>
         </form>
       </div>
-    </div>
+    </section>
   ) : null;
 }

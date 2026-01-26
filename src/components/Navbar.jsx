@@ -12,10 +12,10 @@ const Navbar = ({ setIsSidebarOpen }) => {
     const { theme } = useSelector(state => state.theme);
 
     return (
-        <div className="w-full bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 px-6 xl:px-16 py-3 flex-shrink-0">
+        <header className="w-full bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 px-6 xl:px-16 py-3 shrink-0">
             <div className="flex items-center justify-between max-w-6xl mx-auto">
                 {/* Left section */}
-                <div className="flex items-center gap-4 min-w-0 flex-1">
+                <section className="flex items-center gap-4 min-w-0 flex-1">
                     {/* Sidebar Trigger */}
                     <button onClick={() => setIsSidebarOpen((prev) => !prev)} className="sm:hidden p-2 rounded-lg transition-colors text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800" >
                         <PanelLeft size={20} />
@@ -30,10 +30,10 @@ const Navbar = ({ setIsSidebarOpen }) => {
                             className="pl-8 pr-4 py-2 w-full bg-white dark:bg-zinc-900 border border-gray-300 dark:border-zinc-700 rounded-md text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition"
                         />
                     </div>
-                </div>
+                </section>
 
                 {/* Right section */}
-                <div className="flex items-center gap-3">
+                <section className="flex items-center gap-3">
 
                     {/* Theme Toggle */}
                     <button onClick={() => dispatch(toggleTheme())} className="size-8 flex items-center justify-center bg-white dark:bg-zinc-800 shadow rounded-lg transition hover:scale-105 active:scale-95">
@@ -46,9 +46,9 @@ const Navbar = ({ setIsSidebarOpen }) => {
 
                     {/* User Button */}
                     <UserButton />
-                </div>
+                </section>
             </div>
-        </div>
+        </header>
     )
 }
 

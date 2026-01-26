@@ -50,8 +50,8 @@ const AddProjectMember = ({ isDialogOpen, setIsDialogOpen }) => {
   if (!isDialogOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/20 dark:bg-black/50 backdrop-blur flex items-center justify-center z-50">
-      <div className="bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-xl p-6 w-full max-w-md text-zinc-900 dark:text-zinc-200">
+    <section className="fixed inset-0 bg-black/20 dark:bg-black/50 backdrop-blur flex items-center justify-center z-50">
+      <section className="bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 rounded-xl p-6 w-full max-w-md text-zinc-900 dark:text-zinc-200">
         {/* Header */}
         <div className="mb-4">
           <h2 className="text-xl font-bold flex items-center gap-2">
@@ -71,7 +71,7 @@ const AddProjectMember = ({ isDialogOpen, setIsDialogOpen }) => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email */}
-          <div className="space-y-2">
+          <section className="space-y-2">
             <label
               htmlFor="email"
               className="text-sm font-medium text-zinc-900 dark:text-zinc-200"
@@ -101,7 +101,7 @@ const AddProjectMember = ({ isDialogOpen, setIsDialogOpen }) => {
                   ))}
               </select>
             </div>
-          </div>
+          </section>
 
           {/* Footer */}
           <div className="flex justify-end gap-3 pt-2">
@@ -121,8 +121,8 @@ const AddProjectMember = ({ isDialogOpen, setIsDialogOpen }) => {
             </button>
           </div>
         </form>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 

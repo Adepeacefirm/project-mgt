@@ -54,7 +54,7 @@ export default function TasksSummary() {
           key={card.title}
           className="bg-white dark:bg-zinc-950 dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-200 rounded-lg overflow-hidden"
         >
-          <div className="border-b border-zinc-200 dark:border-zinc-800 p-4 pb-3">
+          <section className="border-b border-zinc-200 dark:border-zinc-800 p-4 pb-3">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
                 <card.icon className="w-4 h-4 text-gray-500 dark:text-zinc-400" />
@@ -70,8 +70,8 @@ export default function TasksSummary() {
                 </span>
               </div>
             </div>
-          </div>
-          <div className="p-4">
+          </section>
+          <section className="p-4">
             {card.items.length === 0 ? (
               <p className="text-sm text-gray-500 dark:text-zinc-400 text-center py-4">
                 No {card.title.toLowerCase()}
@@ -99,7 +99,7 @@ export default function TasksSummary() {
                 )}
               </div>
             )}
-          </div>
+          </section>
         </div>
       ))}
     </div>
